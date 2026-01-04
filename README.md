@@ -29,12 +29,12 @@ ls /dev/ttyUSB*
 ```
 ls /dev/ttyACM* 
 ```
-拔掉雷达，再执行上述指令。消失的那个设备就是雷达设备。
+拔掉雷达，再执行上述指令。消失的那个设备就是雷达设备。  
 3. 设置访问权限
 ```
 sudo usermod -a -G dialout $USER 
 ```
-4. 修改设备参数：
+4. 修改设备参数：  
 打开lidar_pkg_ros2/config/lidar_params.yaml，修改port_name为雷达设备（比如：/dev/ttyUSBx）
 5. 编译
 ```
