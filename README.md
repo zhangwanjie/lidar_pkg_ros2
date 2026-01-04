@@ -5,25 +5,23 @@ Bilibili: [机器人操作系统 ROS2 入门教材](https://www.bilibili.com/vid
 Youtube: [机器人操作系统 ROS2 入门教材](https://www.youtube.com/watch?v=j0foOvBqQTc)
 
 ## 教材书籍
-《机器人操作系统（ROS2）入门与实践》  
-![教材书籍](./media/book_1.jpg)  淘宝链接：[《机器人操作系统（ROS2）入门与实践》](https://world.taobao.com/item/820988259242.htm)
+《机器人操作系统（ROS2）入门与实践》
+<div align="center">
+  <img src="./media/book_1.jpg" width="400">
+</div><br>
+淘宝链接：[《机器人操作系统（ROS2）入门与实践》](https://world.taobao.com/item/820988259242.htm)
 
 ## 系统版本
 
 - ROS2 Humble (Ubuntu 22.04)
 
 ## 使用说明
-1. 获取源码:
+1. 获取源码：
 ```
 cd ~/ros2_ws/src/
 git clone https://github.com/zhangwanjie/lidar_pkg_ros2.git
 ```
-2. 编译
-```
-cd ~/ros2_ws
-colcon build --symlink-install
-```
-3. 插上雷达，执行如下指令：
+2. 插上雷达，执行如下指令：
 ```
 ls /dev/ttyUSB* 
 ```
@@ -32,10 +30,24 @@ ls /dev/ttyUSB*
 ls /dev/ttyACM* 
 ```
 拔掉雷达，再执行上述指令。消失的那个设备就是雷达设备。
-4. 设置访问权限
+3. 设置访问权限
 ```
 sudo usermod -a -G dialout $USER 
 ```
+4. 修改设备参数：
+打开lidar_pkg_ros2/config/lidar_params.yaml，修改port_name为雷达设备（比如：/dev/ttyUSBx）
+5. 编译
+```
+cd ~/ros2_ws
+colcon build --symlink-install
+```
+6. 运行测试：
+```
+ros2 launch lidar_pkg monitor.launch.py 
+```
+7. 对于没有外接显示设备的情况，使用如下指令启动雷达：
+```
+ros2 launch lidar_pkg lidar.launch.py 
+```
 
 
-SLAM环境地图创建:
