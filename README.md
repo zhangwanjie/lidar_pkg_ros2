@@ -7,7 +7,7 @@ Youtube: [机器人操作系统 ROS2 入门教材](https://www.youtube.com/watch
 ## 教材书籍
 《机器人操作系统（ROS2）入门与实践》
 <div align="center">
-  <img src="./media/book_1.jpg" width="400">
+  <img src="./media/book_1.jpg" width="300">
 </div><br>
 淘宝链接：[《机器人操作系统（ROS2）入门与实践》](https://world.taobao.com/item/820988259242.htm)
 
@@ -17,37 +17,54 @@ Youtube: [机器人操作系统 ROS2 入门教材](https://www.youtube.com/watch
 
 ## 使用说明
 1. 获取源码：
-```
-cd ~/ros2_ws/src/
-git clone https://github.com/zhangwanjie/lidar_pkg_ros2.git
-```
+  ```
+  cd ~/ros2_ws/src/
+  git clone https://github.com/zhangwanjie/lidar_pkg_ros2.git
+  ```
+  备用地址：
+  ```
+  cd ~/catkin_ws/src/
+  git clone https://gitee.com/s-robot/lidar_pkg_ros2.git
+  ```
 2. 插上雷达，执行如下指令：
-```
-ls /dev/ttyUSB* 
-```
-或者
-```
-ls /dev/ttyACM* 
-```
-拔掉雷达，再执行上述指令。消失的那个设备就是雷达设备。  
+  ```
+  ls /dev/ttyUSB* 
+  ```
+  或者
+  ```
+  ls /dev/ttyACM* 
+  ```
+  拔掉雷达，再执行上述指令。消失的那个设备就是雷达设备。  
 3. 设置访问权限
-```
-sudo usermod -a -G dialout $USER 
-```
+  ```
+  sudo usermod -a -G dialout $USER 
+  ```
 4. 修改设备参数：  
-打开lidar_pkg_ros2/config/lidar_params.yaml，修改port_name为雷达设备（比如：/dev/ttyUSBx）
+  ```
+  sudo usermod -a -G dialout $USER 
+  ```
 5. 编译
-```
-cd ~/ros2_ws
-colcon build --symlink-install
-```
+  ```
+  cd ~/ros2_ws
+  colcon build --symlink-install
+  ```
 6. 运行测试：
-```
-ros2 launch lidar_pkg monitor.launch.py 
-```
+  ```
+  ros2 launch lidar_pkg monitor.launch.py 
+  ```
 7. 对于没有外接显示设备的情况，使用如下指令启动雷达：
-```
-ros2 launch lidar_pkg lidar.launch.py 
-```
+  ```
+  ros2 launch lidar_pkg lidar.launch.py 
+  ```
+## 分享&交流
+关注我，后续解锁更多玩法 o(*≧▽≦)ツ
+<div align="center">
+  <img src="./media/AJQR.jpg" width="400">
+</div><br>
 
+## 特别感谢
+感谢智元科技的大力支持，可扫描如下二维码获取更多开发资料。
+<div align="center">
+  <img src="./media/D1_EDU.jpg" width="400">
+</div><br>
 
