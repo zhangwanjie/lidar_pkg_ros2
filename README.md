@@ -9,6 +9,7 @@ Youtube: [机器人操作系统 ROS2 入门教材](https://www.youtube.com/watch
 <div align="center">
   <img src="./media/book_1.jpg" width="300">
 </div><br>
+
 淘宝链接：[《机器人操作系统（ROS2）入门与实践》](https://world.taobao.com/item/820988259242.htm)
 
 ## 系统版本
