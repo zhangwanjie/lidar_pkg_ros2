@@ -63,7 +63,7 @@ Youtube: [机器人操作系统 ROS2 入门教材](https://www.youtube.com/watch
 </div><br>
 
 ## 特别感谢
-感谢智元科技的大力支持，可扫描如下二维码获取更多开发资料。
+感谢智元机器人的大力支持，可扫描如下二维码获取更多开发资料。
 <div align="center">
   <img src="./media/D1_EDU.jpg" width="400">
 </div><br>
