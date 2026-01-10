@@ -1,8 +1,8 @@
 # 扫地机器人雷达 ROS2 驱动
 
 ## 介绍视频
-Bilibili: [一只机器狗是如何逃离遥控器的？！](https://www.bilibili.com/video/BV15Li4B9EDW/)  
-Youtube: [一只机器狗是如何逃离遥控器的？！](https://www.youtube.com/watch?v=j0foOvBqQTc)
+Bilibili: [【开源】超低成本的激光雷达导航方案](https://www.bilibili.com/video/BV15Li4B9EDW/)  
+Youtube: [【开源】超低成本的激光雷达导航方案](https://www.youtube.com/watch?v=J-uE7xHYDxY)
 
 ## 特别感谢
 感谢智元机器人的大力支持，可扫描如下二维码获取更多开发资料。
@@ -33,7 +33,7 @@ Youtube: [一只机器狗是如何逃离遥控器的？！](https://www.youtube.
   cd ~/catkin_ws/src/
   git clone https://gitee.com/s-robot/lidar_pkg_ros2.git
   ```
-2. 插上雷达，执行如下指令：
+2. 插上雷达，执行如下指令：  
   ```
   ls /dev/ttyUSB* 
   ```
@@ -42,13 +42,17 @@ Youtube: [一只机器狗是如何逃离遥控器的？！](https://www.youtube.
   ls /dev/ttyACM* 
   ```
   拔掉雷达，再执行上述指令。消失的那个设备就是雷达设备。  
-3. 设置访问权限
+  3. 设置访问权限
   ```
   sudo usermod -a -G dialout $USER 
   ```
 4. 修改设备参数：  
+  修改文件 /cofnig/lidar_params.yaml  
   ```
-  sudo usermod -a -G dialout $USER 
+  lidar_node:
+  ros__parameters:
+    port_name: "/dev/ttyUSB*"  #修改为具体的设备名称
+    frame_id: "laser"
   ```
 5. 编译
   ```
